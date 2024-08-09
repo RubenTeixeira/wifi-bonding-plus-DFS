@@ -1,7 +1,5 @@
 name: Upload zip
-on:
-  release:
-    types: [published]
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
