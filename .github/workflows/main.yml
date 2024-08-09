@@ -8,7 +8,8 @@ jobs:
     - name: Make release zip
       run: |
         wget https://github.com/topjohnwu/Magisk/raw/master/scripts/module_installer.sh -O META-INF/com/google/android/update-binary
-        zip -9 -x *.git* -r ../wifi_bonding_plus_dfs.zip ./
+        rm -rf '*.git*'
+        zip -9 -r ../wifi_bonding_plus_dfs.zip ./
         sha256sum ../wifi_bonding_plus_dfs.zip > ../wifi_bonding_plus_dfs.zip.sha256sum
     - name: Release
       uses: softprops/action-gh-release@v1
@@ -19,5 +20,5 @@ jobs:
           ../wifi_bonding_plus_dfs.zip.sha256sum
     - uses: actions/upload-artifact@v4
       with:
-        name: wifi_bonding_plus_dfs
+        name: wifi_bonding_plus_dfs.zip
         path: ./
