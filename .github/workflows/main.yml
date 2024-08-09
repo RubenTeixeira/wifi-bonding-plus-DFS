@@ -19,7 +19,7 @@ jobs:
         files: |
           ../wifi_bonding_plus_dfs.zip
           ../wifi_bonding_plus_dfs.zip.sha256sum
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v4
       with:
         name: wifi_bonding_plus_dfs
         path: ./
