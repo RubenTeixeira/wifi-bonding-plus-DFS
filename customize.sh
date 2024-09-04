@@ -17,7 +17,7 @@ do
 mkdir -p `dirname $MODPATH$CFG`
 ui_print "- Migrating $CFG"
 $CMDPREFIX cp -af $CFG $MODPATH$CFG
-ui_print "- Starting modifiy"
+ui_print "- Starting modify"
 sed -i '/gChannelBondingMode24GHz=/d;/gChannelBondingMode5GHz=/d;/g11dSupportEnabled=/d;/gForce1x1Exception=/d;/sae_enabled=/d;/BandCapability=/d;/WmmIsEnabled=/d;/gEnableDFSChnlScan=/d;/gAllowDFSChannelRoam=/d;/g11hSupportEnabled=/d;/gEnableDFSMasterCap=/d;/gInitialScanNoDFSChnl=/d;/gEnableBypass11d=/d; /gSkipDfsChannelInP2pSearch=/d;/isP2pDeviceAddrAdministrated=/d;s/^END$/gChannelBondingMode24GHz=1\ngChannelBondingMode5GHz=1\ng11dSupportEnabled=0\ngForce1x1Exception=0\nsae_enabled=1\nBandCapability=0\nWmmIsEnabled=1\ngEnableDFSChnlScan=1\ngAllowDFSChannelRoam=1\ng11hSupportEnabled=1\ngEnableDFSMasterCap=1\ngInitialScanNoDFSChnl=0\ngEnableBypass11d=1\ngSkipDfsChannelInP2pSearch=0\nisP2pDeviceAddrAdministrated=0\nEND/g' $MODPATH$CFG
 }
 done
